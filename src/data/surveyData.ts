@@ -125,6 +125,7 @@ export const activities: Activity[] = [
 ];
 
 import { supabase } from '@/lib/supabase';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface SurveyResponse {
   response_id: string;

@@ -8,6 +8,7 @@ import SubActivityCard from "@/components/SubActivityCard";
 import { activities, saveResponse, type SurveyResponse } from "@/data/surveyData";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { v4 as uuidv4 } from 'uuid';
 
 const CommentField = ({ value, onChange, label }: { value: string; onChange: (v: string) => void; label?: string }) => (
   <div className="mt-4 pt-4 border-t border-border">
@@ -100,7 +101,7 @@ const Survey = () => {
 
   const submit = async () => {
     const response: SurveyResponse = {
-      response_id: crypto.randomUUID(),
+      response_id: uuidv4(),
       timestamp: new Date().toISOString(),
       q1_selected_activities: q1,
       q1_sub_answers: q1Sub,
